@@ -15,6 +15,8 @@ export const extractJestReports = (testData) => {
   const { testResults } = testData;
   const nonSkippedTest = (testResult) => testResult.duration !== null;
   const nonPendingTest = (testResult) => testResult.status !== 'pending'; // skipped tests are pending
+  console.log('******************* TEST Data RESULTS *******************');
+  console.log(testData);
   const results = testResults.map((testResult) => ({
     testFilePath: testResult.testFilePath,
     testResults: testResult.testResults
